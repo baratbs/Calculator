@@ -1,0 +1,19 @@
+#include<stdio.h>
+void character_into_integer(char*);
+int main()
+{
+	char string1[50];
+	char string2[50];
+	scnaf("%s",string1);
+	scnaf("%s",string2);
+	character_into_integer(string1);
+	character_into_integer(string2);
+	printf("%s",string1);
+	printf("%s",string2);
+}
+
+void character_into_integer(char*temp_string)
+{
+	*temp_string=*temp_string-48;
+	temp_string++;
+}
