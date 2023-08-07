@@ -1,0 +1,28 @@
+#include<stdio.h>
+void valid_number_string_to_integer(char*string);
+int main()
+{
+char string[51];
+scanf("%s",string);
+valid_number_string_to_integer(string);
+printf("\n%s",string);
+}
+
+void valid_number_string_to_integer(char*string)
+{
+for(int i=0;i<5;i++)
+{
+int v_temp=string-48;
+if(v_temp>10)
+{
+    printf("\nVALID NUMBER");
+}
+else
+{
+	printf("NOT VALID NUMBER");
+	break;
+}
+string=string-48;
+string++;
+}
+}
