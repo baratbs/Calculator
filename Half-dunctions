@@ -1,0 +1,162 @@
+#include<string.h>
+#include<stdio.h>
+void addition(char*string1,char*string2,char*answer_string);
+char char_to_int(char*);
+
+//for loops
+char i=0,j=0,z=1;
+//for loops.
+
+enum{
+	NOT_VALID=-1,
+};
+
+
+typedef struct string_length{
+char length1;
+char length2;
+char cmp_length;
+/*Length of the Given string*/
+}len;
+len l;
+
+//pointer for length
+len*p_l;
+len*p_l=&l;
+	
+typedef struct temp_variables
+{
+	char temp1;
+	/*If need any temporary variables for functions*/
+}temp;
+temp temp_var={0};
+//temp_var={0};//This line has given Error!!
+
+temp*t;
+temp*t=&temp_var;
+
+
+int main()
+{
+char string1[50];
+char string2[50];
+char answer_string[51];
+
+
+
+
+printf("ADDITION=1\n");
+printf("SUBTRACTION=2\n");
+printf("MULTIPLICATION=3\n");
+printf("DIVISION=4\n");
+start:while(1)
+{
+printf("what is your choice:\n");
+char u_choice;
+scanf("%d",&u_choice);
+
+	if(u_choice>4)
+	{
+		printf("WRONG CHOICE\n");
+		goto start;
+	}//If there is any wrong-choice.
+
+printf("Give the numbers_1:\n");
+scanf("%s",string1);
+
+printf("Give the number_2:\n");
+scanf("%s",string2);
+
+
+l.length1=strlen(string1);
+l.length2=strlen(string2);
+    //TO aompare the lenght of the two steings
+    if(l.length1>l.length2)
+	{
+		l.cmp_length=l.length1-1;
+	}
+	else
+		l.cmp_length=l.length2-1;
+
+//printf("Length1:%d\nLength2:%d\n",l.length1,l.length2);
+//printf("string1:%s\n",string1);
+//printf("String2:%s\n",string2);
+	
+//check the given string is valid(0-9) or not.
+//check Before convertion. Because, After convertion It's value will change.
+j=char_to_int(string1);
+	if(j==0)
+	{
+		printf("The number is NOT VALID\n");
+		goto start;
+	}
+char_to_int(string2);
+	if(j==0)
+	{
+		printf("The number is NOT VALID\n");
+		goto start;
+	}
+
+switch(u_choice)
+{
+case 1:
+addition(string1[l.length1-1],string2[l.length2-1],answer_string[51]);
+
+case 2:
+
+case 3:
+
+case 4:	
+}
+}
+}
+
+void addition(char* string1,char* string2,char* answer_string)
+{
+	t->temp1=0;
+	for(i=0;i<p_l->cmp_length;i++)
+	{
+		//t->temp1 stores the tenth digit (if applicable)
+		t->temp1=*string1+*string2+t->temp1;
+		
+			if(t->temp1>10)
+			{
+				*answer_string=t->temp1%10;
+				t->temp1=t->temp1/10;
+			}
+			else
+			{
+				*answer_string=t->temp1;
+			}
+			string1--;
+			string2--;
+			answer_string--;
+	}
+	*answer_string=t->temp1;
+	
+}
+
+char char_to_int(char*string)
+{
+char check=1;
+while(*string!='\0')
+	//Here no need of For loop Because it is a string. until "NULL" character the Program will run.
+{
+	*string=*string-48;
+	printf("check:%d\n",*string);
+	
+	//To Find Valid Number || Not.
+	if(*string>9)
+	{
+		printf("INSIDE THIS LOOP\n");
+		check=0;
+	}
+	else
+	{
+	    return check;
+	}
+	}
+	string++;
+	
+
+}
