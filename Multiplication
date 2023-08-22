@@ -1,0 +1,84 @@
+multiplication(string1[l.length1-1],string2[l.length2-1];
+
+void multiplication(char* string1,char*string2)
+{
+	char answer_string1[70];
+	char answer_string2[70];
+	char final_answer[70];
+	
+	//creating a pointers for Above strings, just like I pass the address of strings through the function.
+	//I need to re-check it! 
+	//Be careful!
+	//I need to make sure Can I assign values of the pointer while declaring them.
+	//If no I need to declare first char*p_answer_string1 and then assign address to them &answer_string1[69].
+	//check it!
+	
+	char*p_answer_string1=&answer_string1[69];
+	char*p_answer_string2=&answer_string2[69];
+	char*p_final_answer=&final_answer[69];
+	//This may be wrong we shoukd refer to The Real Thing in Book of Let us C.
+	
+	char addtion_after_multi=0;
+	char iteration=0;
+	
+t_lengt2=*p_l->length2;	
+while(t_lengt2!=0)          //length of string2.
+{
+	t_length1=*p_l->length1;
+	while(t_length1!=0)      //length of string1.
+	{
+		*p_t->temp_a=*string1**string2;                  //temp_a is temp_answer //It is declared in temp struct.
+		*p_t->temp_a=*p_t->temp_a+addtion_after_multi;
+		
+					if(*p_t->temp_a>9)
+					{
+						switch(iteration)
+						{
+							case 0:
+						    *p_answer_string1=*p_t->temp_a%10;
+						    addtion_after_multi=*p_t->temp_a/10;
+						    p_answer_string1--;
+							break;
+							
+							default:
+							t_iteraion=iteration;
+							while(t_iteration!=0)    //This is to put zero to the answers for the second time.
+							{
+								*p_answer_string1=0;
+								 p_answer_string1--;
+								 t_iteration--;
+							}
+							*p_answer_string1=*p_t->temp_a%10;
+						    addtion_after_multi=*p_t->temp_a/10;
+						    p_answer_string1--;
+							break;
+						}
+					
+					}
+					else
+					{
+						*p_answer_string1=*p_t->temp_a;
+						*p_answer_string1--;
+					}
+		string1--;
+		*p_l->length1--;
+	}
+	//Here,I need to set the string1 points to the same place where It was pointing when the function is called.
+	//How to do that?
+	string1=string1+*p_l->(length1-1);  //✔ check it!
+	t_length1=*p_l->length1;
+	string2--;
+	t_lengt2--;
+	iteration++;
+	switch(iteration) //It is faster than If-else.
+	{
+		case 0:
+		strcpy(final_answer,answer_string1);
+		break;
+	}
+	xyz1=strlen(final_answer);
+	xyz2=strlen(answer_string1);
+	addition(final_answer[xyz1-1],answer_string1[xyz2-1],answer_string2[69]);
+}
+
+}
